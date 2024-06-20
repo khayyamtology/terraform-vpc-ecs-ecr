@@ -1,9 +1,9 @@
-# Create a VPC
-resource "aws_vpc" "kkVPC" {
-  instance_tenancy = "default"
-  cidr_block       = var.vpc_cidr
-  tags             = var.vpc_tags
-}
+## Create a VPC
+# resource "aws_vpc" "kkVPC" {
+#   instance_tenancy = "default"
+#   cidr_block       = var.vpc_cidr
+#   tags             = var.vpc_tags
+# }
 
 # resource "aws_internet_gateway" "kkIGW" {
 #   vpc_id  = aws_vpc.kkVPC.id
@@ -44,19 +44,19 @@ resource "aws_vpc" "kkVPC" {
 #   tags = var.publicSubnet2_tags
 # }
 
-resource "aws_subnet" "kkPrivateSubnet1" {
-  vpc_id            = aws_vpc.kkVPC.id
-  cidr_block        = var.private_subnet_cidrs[0]
-  availability_zone = var.availability_zones[0]
-  tags = var.privateSubnet1_tags
-}
+# resource "aws_subnet" "kkPrivateSubnet1" {
+#   vpc_id            = aws_vpc.kkVPC.id
+#   cidr_block        = var.private_subnet_cidrs[0]
+#   availability_zone = var.availability_zones[0]
+#   tags = var.privateSubnet1_tags
+# }
 
-resource "aws_subnet" "kkPrivateSubnet2" {
-  vpc_id            = aws_vpc.kkVPC.id
-  cidr_block        = var.private_subnet_cidrs[1]
-  availability_zone = var.availability_zones[1]
-  tags = var.privateSubnet2_tags
-}
+# resource "aws_subnet" "kkPrivateSubnet2" {
+#   vpc_id            = aws_vpc.kkVPC.id
+#   cidr_block        = var.private_subnet_cidrs[1]
+#   availability_zone = var.availability_zones[1]
+#   tags = var.privateSubnet2_tags
+# }
 
 # resource "aws_route_table" "kkPublicRT" {
 #   vpc_id = aws_vpc.kkVPC.id
